@@ -100,12 +100,12 @@
     				<configuration>
     					<assembleDirectory>target</assembleDirectory>
     					<!-- Set the target configuration directory to be used in the bin scripts -->
-          				<configurationDirectory>config</configurationDirectory>
-          				<!-- Copy the contents from "/src/main/config" to the target
-               			configuration directory in the assembled application -->
-          				<copyConfigurationDirectory>true</copyConfigurationDirectory>
-          				<!-- Include the target configuration directory in the beginning of
-               			the classpath declaration in the bin scripts -->
+          				<configurationDirectory>config</configurationDirectory>
+          				<!-- Copy the contents from "/src/main/config" to the target
+               			configuration directory in the assembled application -->
+          				<copyConfigurationDirectory>true</copyConfigurationDirectory>
+          				<!-- Include the target configuration directory in the beginning of
+               			the classpath declaration in the bin scripts -->
 						<includeConfigurationDirectoryInClasspath>true</includeConfigurationDirectoryInClasspath>
     					<programs>
     						<program>
@@ -123,6 +123,13 @@
     					</execution>
     				</executions>
     			</plugin>
+		<plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <configuration>
+                <useSystemClassLoader>false</useSystemClassLoader>
+            </configuration>
+        </plugin>
         </plugins>
     </build>
 
